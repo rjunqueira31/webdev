@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Score Keeper</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>SCORE KEEPER</h1>
+      </header>
+
+      <main>
+        <section class="scoreboard">
+          <div class="win-score" id="win">
+            <label for="WinVal">Playing To:</label>
+
+            <select name="WinVal" id="WinVal"  >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3" selected>3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+          <div class="player" id="player1">
+            <h2>Player 1</h2>
+            <div class="score">0</div>
+            <button class="btn-increase">+1</button>
+            <button class="btn-decrease">-1</button>
+          </div>
+
+          <div class="player" id="player2">
+            <h2>Player 2</h2>
+            <div class="score">0</div>
+            <button class="btn-increase">+1</button>
+            <button class="btn-decrease">-1</button>
+          </div>
+        </section>
+
+        <div class="bottom-btn-div">
+          <button class="btn-reset" id="reset-btn" scrit="">Reset Game</button>
+          <button class="btn-rand" id="rand-btn">Simulate a game</button>
+        </div>
+      </main>
+
+      <footer>
+        <p>&copy; 2025 Score Keeper. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

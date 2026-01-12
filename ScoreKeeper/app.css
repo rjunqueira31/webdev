@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 100%;
+  padding: 40px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: 3em;
+  color: #333;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+main {
+  margin-bottom: 30px;
+}
+
+.scoreboard {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+/* Win score bar that sits above the player cards (flow layout, not overlay) */
+.win-score {
+  position: static;
+  grid-column: 1 / -1; /* span both columns */
+  justify-self: stretch; /* take full available width */
+  align-self: start;
+  background: rgba(255, 255, 255, 0.98);
+  padding: 16px 24px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  font-weight: 700;
+  color: #2d3748;
+  text-align: center;
+  min-width: 240px;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 1.05rem; /* slightly larger base font for label/select */
+}
+
+.win-score[hidden] {
+  display: none;
+}
+
+/* Larger label and select inside win-score */
+.win-score label {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.win-score select {
+  font-size: 1.05rem;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #dfe3e8;
+  background: #fff;
+  color: #2d3748;
+}
+
+@media (max-width: 600px) {
+  .win-score {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 1rem;
+    padding: 12px 14px;
+  }
+
+  .win-score select,
+  .win-score label {
+    font-size: 1rem;
+  }
+}
+
+.player {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.player:hover {
+  border-color: #667eea;
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+}
+
+.player h2 {
+  font-size: 1.5em;
+  color: #495057;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.score {
+  font-size: 3.5em;
+  color: #667eea;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-shadow: 0 2px 4px rgba(102, 126, 234, 0.1);
+}
+
+.player button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  font-size: 1em;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 10px;
+}
+
+.btn-increase {
+  background: #28a745;
+  color: white;
+}
+
+.btn-increase:hover {
+  background: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+.btn-increase:active {
+  transform: translateY(0);
+}
+
+.btn-decrease {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-decrease:hover {
+  background: #c82333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+.btn-decrease:active {
+  transform: translateY(0);
+}
+
+.bottom-btn-div {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.btn-reset {
+  display: inline;
+  width: 48%;
+  padding: 15px;
+  font-size: 1.1em;
+  font-weight: 600;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.btn-reset:hover {
+  background: #5568d3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-reset:active {
+  transform: translateY(0);
+}
+
+.btn-rand {
+  display: inline;
+  width: 48%;
+  padding: 15px;
+  font-size: 1.1em;
+  font-weight: 600;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.btn-rand:hover {
+  background: #5568d3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-rand:active {
+  transform: translateY(0);
+}
+
+footer {
+  text-align: center;
+  border-top: 1px solid #e9ecef;
+  padding-top: 20px;
+  color: #868e96;
+  font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .container {
+    padding: 25px;
+  }
+
+  h1 {
+    font-size: 2em;
+    letter-spacing: 1px;
+  }
+
+  .scoreboard {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .score {
+    font-size: 3em;
+  }
+
+  .player {
+    padding: 20px;
+  }
+
+  .player h2 {
+    font-size: 1.3em;
+  }
+}

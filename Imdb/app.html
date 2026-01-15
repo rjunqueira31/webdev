@@ -8,7 +8,7 @@
   </head>
   <body>
     <header>
-      <h1>My IMDB</h1>
+      <h1><span id="pageTitle">My IMDB</span></h1>
       <form id="searchForm">
         <input
           type="text"
@@ -18,6 +18,13 @@
         />
         <button>Search</button>
       </form>
+      <input
+          type="text"
+          id="searchPeople"
+          placeholder="Search people"
+          name="queryPeople"
+          class="search-People"
+      />
     </header>
 
     <div id="searchResults2" class="search-results2"></div>
@@ -31,6 +38,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="app2.js"></script>
+    <script src="showSearch.js"></script>
   </body>
 </html>

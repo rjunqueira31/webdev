@@ -33,6 +33,14 @@ header h1 {
   color: yellow;
   letter-spacing: 0.5px;
 }
+header h1 span {
+  cursor: pointer;
+}
+
+header h1 span:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
 
 @media (max-width: 400px) {
   header h1 {
@@ -42,7 +50,7 @@ header h1 {
     padding: 100px 12px 12px;
   }
 
-  .show-image {
+  .display-image {
     display: none;
   }
 }
@@ -66,6 +74,10 @@ p {
   color: #666;
   line-height: 1.6;
   margin-bottom: 15px;
+}
+
+.search-People {
+  margin-top: 10px;
 }
 
 button {
@@ -105,7 +117,7 @@ button:hover {
   }
 }
 
-.show-item {
+.display-item {
   display: flex;
   gap: 16px;
   background: rgba(255, 255, 255, 0.08);
@@ -114,7 +126,7 @@ button:hover {
   align-items: flex-start;
 }
 
-.show-image {
+.display-image {
   width: 160px;
   height: 260px;
   object-fit: cover;
@@ -122,17 +134,17 @@ button:hover {
   flex-shrink: 0;
 }
 
-.show-info {
+.display-info {
   display: flex;
   flex-direction: column;
 }
 
-.show-info h3 {
+.display-info h3 {
   color: red;
   margin-bottom: 6px;
 }
 
-.show-info p {
+.display-info p {
   color: white;
   font-size: 14px;
   line-height: 1.4;
